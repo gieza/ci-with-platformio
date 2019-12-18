@@ -6,10 +6,9 @@ cache:
     directories:
         - "~/.platformio"
 env:
-    - PLATFORMIO_CI_SRC=src/main.cpp
+    - PLATFORMIO_CI_SRC=test/native/test_first.cpp
 install:
     - pip install -U platformio
 script:
-    - pio remote -a rpi1 run -t upload -e nodemcuv2
-    - pio remote -a rpi1 test -e nodemcuv2
+    - pio test -e native
 
